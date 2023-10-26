@@ -27,11 +27,11 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Add Package</h3>
+              <h3 class="card-title">Member</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action = '<?php echo route_to('member') ?>' method="post" accept-charset="utf-8">
+            <form action = '<?php echo route_to('member/save') ?>' method="post" accept-charset="utf-8">
               <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
               <?= csrf_meta() ?>
               <div class="card-body">

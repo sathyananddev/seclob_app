@@ -19,7 +19,7 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <form action="<?php echo route_to('login/user') ?>" method="post" accept-charset="utf-8">
+    <form action="<?php echo route_to('login/user') ?>" method="post" accept-charset="utf-8" id="loginForm">
       <div class="login-logo">
         <a href="#"><b>Admin</a>
       </div>
@@ -32,7 +32,7 @@
           <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
           <?= csrf_meta() ?>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
+            <input type="email" class="form-control" placeholder="Email" name="email" id="email">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" name="password" id="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -88,10 +88,27 @@
 
   <!-- jQuery -->
   <script src="../../plugins/jquery/jquery.min.js"></script>
+  <script src="../../jquery-validator/dist/jquery.validate.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#loginForm").validate({
+        rules: {
+          // no quoting necessary
+          //email: "required",
+         // password: "required",
+          // // quoting necessary!
+          // "user[email]": "email",
+          // // dots need quoting, too!
+          // "user.address.street": "required"
+        }
+      });
+    });
+  </script>
   <!-- Bootstrap 4 -->
   <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../../dist/js/adminlte.min.js"></script>
+
 </body>
 
 </html>

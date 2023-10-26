@@ -31,7 +31,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action = "<?php echo route_to('package/test') ?>" method="post" accept-charset="utf-8" id="plan_form">
+            <form action = "<?php echo route_to('package/profile') ?>" method="post" accept-charset="utf-8" id="plan_form">
             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
             <?= csrf_meta() ?>
               <div class="card-body">
@@ -48,11 +48,11 @@
                   <input type="number" class="form-control" id="amountGst" name="amountGst" placeholder="Amount 18% GST" readonly>
                 </div>
                 <div class="form-group">
-                  <label for="users">Users</label>
+                  <label for="users">Users Pin</label>
                   <input type="text" class="form-control" id="users" name="users" placeholder="Users">
                 </div>
                 <div class="form-group">
-                  <label for="addOnUsers">Add-on Users</label>
+                  <label for="addOnUsers">Add-on Users Pin</label>
                   <input type="text" class="form-control" id="addOnUsers" name="addOnUsers" placeholder="Add-on Users">
                 </div>
               </div>

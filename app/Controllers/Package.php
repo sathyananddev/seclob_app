@@ -19,4 +19,7 @@ class Package extends Controller
     public function test(){
         return view('header');
     }
+    public function profile(){
+        return view('profile');
+    }
 }

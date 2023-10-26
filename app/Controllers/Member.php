@@ -13,4 +13,12 @@ class Member extends Controller
             . view('member')
             . view('footer');
     }
+    public function save(){
+        //$data = input('');
+        $data['mega_header'][] = (object) array('title' => 'portfolio image' ,
+    'img' => 'https://complete path of image' );
+    $data['data'] = $_POST;
+
+        return view('test', $data);
+    }
 }
