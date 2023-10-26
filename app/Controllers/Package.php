@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\PlanModel;
 use CodeIgniter\Controller;
 
 class Package extends Controller
 {
-    
+
     public function index()
     {
 
@@ -16,10 +17,16 @@ class Package extends Controller
             . view('footer');
     }
 
-    public function test(){
+    public function test()
+    {
         return view('header');
     }
-    public function profile(){
-        return view('profile');
+    public function profile()
+    {
+
+        return view('list_header')
+            . view('menu') . 
+            view('profile') . 
+            view('list_footer');
     }
 }
