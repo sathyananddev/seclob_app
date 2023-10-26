@@ -8,4 +8,9 @@ class Login extends BaseController
     {
         return view('login');
     }
+
+    public function authenticate()
+    {
+        print_r($_POST);
+    }
 }

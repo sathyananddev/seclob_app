@@ -31,7 +31,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action = '<?php echo route_to('plan') ?>' method="post" accept-charset="utf-8" id="plan_form">
+            <form action = "<?php echo route_to('package/test') ?>" method="post" accept-charset="utf-8" id="plan_form">
             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
             <?= csrf_meta() ?>
               <div class="card-body">

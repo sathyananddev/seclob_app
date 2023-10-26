@@ -37,10 +37,9 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <form method="post" accept-charset="utf-8">
-          <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-          <?= csrf_meta() ?>
+          <?= csrf_field() ?>
           <li class="nav-item">
-            <a href="<?php echo route_to('register-user') ?>" class="nav-link">
+            <a href="<?php echo base_url('package'); ?>" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Package</p>
             </a>

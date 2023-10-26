@@ -12,7 +12,11 @@ class Package extends Controller
 
         return view('header')
             . view('menu')
-            . view('plan')
+            . view('package')
             . view('footer');
+    }
+
+    public function test(){
+        return view('header');
     }
 }
