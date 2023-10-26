@@ -9,8 +9,11 @@ class Login extends BaseController
         return view('login');
     }
 
-    public function authenticate()
+    public function user()
     {
-        print_r($_POST);
+        //if user logged in
+        //return view('package');
+        //else
+        return redirect()->redirect("login");
     }
 }

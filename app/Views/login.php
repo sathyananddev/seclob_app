@@ -19,7 +19,7 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <form action='<?php echo route_to('login/authenticate') ?>' method="post" accept-charset="utf-8">
+    <form action="<?php echo route_to('login/user') ?>" method="post" accept-charset="utf-8">
       <div class="login-logo">
         <a href="#"><b>Admin</a>
       </div>
