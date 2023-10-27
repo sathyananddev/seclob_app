@@ -22,4 +22,15 @@ class PackageModel extends Model
             ->table('package_tbl')
             ->insert($data);
     }
+
+    public function get($id = false)
+    {
+        if ($id === false) {
+            $query = $this->db->query('SELECT * FROM package_tbl');
+            $results = $query->getResultArray();
+            return $results;
+        } else {
+            return $this->getWhere(['id' => $id]);
+        }
+    }
 }

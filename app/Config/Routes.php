@@ -9,6 +9,7 @@ $routes->get('login','Login::index');
 $routes->post('login/user','Login::user');
 $routes->get('user/logout','Login::logout');
 $routes->get('package','Package::index');
+$routes->get('packages','Package::list');
 $routes->post('package/save','Package::save');
 $routes->get('member','Member::index');
 $routes->post('member/save','Member::save');

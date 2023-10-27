@@ -31,9 +31,9 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action = "<?php echo route_to('package/save') ?>" method="post" accept-charset="utf-8" id="plan_form">
-            <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-            <?= csrf_meta() ?>
+            <form action="<?php echo route_to('package/save') ?>" method="post" accept-charset="utf-8" id="plan_form">
+              <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
+              <?= csrf_meta() ?>
               <div class="card-body">
                 <div class="form-group">
                   <label for="planName">Plan Name</label>
@@ -45,7 +45,8 @@
                 </div>
                 <div class="form-group">
                   <label for="amount">GST Excluded Amount 18%</label>
-                  <input type="number" class="form-control" id="amountGst" name="amountGst" placeholder="Amount 18% GST" readonly>
+                  <input type="number" class="form-control" id="amountGst" name="amountGst" placeholder="Amount 18% GST"
+                    readonly>
                 </div>
                 <div class="form-group">
                   <label for="users">Users Pin</label>
@@ -81,14 +82,30 @@
   $(document).ready(function () {
     $('#amount').change(function () {
       //$('#amountGst').addClass
-      var amount  = $('#amount').val();
-      var gst =amount/1.18;
+      var amount = $('#amount').val();
+      var gst = amount / 1.18;
       var gst_deducted = Math.round(gst * 100) / 100
       $('input[name="amountGst"]').val(gst_deducted);
 
     });
-    $('.submitBtn').click(function() {
+    $('.submitBtn').click(function () {
       toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+    });
+    $('form#feedInput').submit(function (e) {
+
+      // var form = $(this);
+      // e.preventDefault();
+      // $.ajax({
+      //   type: "POST",
+      //   url: "<?php echo site_url('dashboard/post_feed_item'); ?>",
+      //   data: form.serialize(), // <--- THIS IS THE CHANGE
+      //   dataType: "html",
+      //   success: function (data) {
+      //     $('#feed-container').prepend(data);
+      //   },
+      //   error: function () { alert("Error posting feed."); }
+      // });
+
     });
   });
 </script>
