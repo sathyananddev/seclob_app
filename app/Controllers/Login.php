@@ -27,8 +27,6 @@ class Login extends BaseController
 
     public function user()
     {
-        //if user logged in
-        //return view('package');
         $model = new UserModel();
         $req = [];
         if(isset($_POST)){
