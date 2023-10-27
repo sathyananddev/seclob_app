@@ -21,4 +21,14 @@ class Member extends Controller
 
         return view('test', $data);
     }
+
+    
+    public function profile()
+    {
+
+        return view('list_header') 
+        .  view('menu') 
+        . view('profile')
+        . view('list_footer');
+    }
 }

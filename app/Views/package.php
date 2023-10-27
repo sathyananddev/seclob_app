@@ -31,7 +31,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action = "<?php echo route_to('package/profile') ?>" method="post" accept-charset="utf-8" id="plan_form">
+            <form action = "<?php echo route_to('package/save') ?>" method="post" accept-charset="utf-8" id="plan_form">
             <input type="hidden" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
             <?= csrf_meta() ?>
               <div class="card-body">
@@ -60,7 +60,7 @@
               <!-- /.card-body -->
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submitBtn" name="submitBtn" class="btn btn-primary submitBtn">Submit</button>
               </div>
             </form>
           </div>
@@ -82,10 +82,13 @@
     $('#amount').change(function () {
       //$('#amountGst').addClass
       var amount  = $('#amount').val();
-      var gst =(amount*18)/100;
-      var gst_deducted =amount - gst;
+      var gst =amount/1.18;
+      var gst_deducted = Math.round(gst * 100) / 100
       $('input[name="amountGst"]').val(gst_deducted);
 
+    });
+    $('.submitBtn').click(function() {
+      toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
     });
   });
 </script>
