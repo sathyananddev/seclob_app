@@ -50,6 +50,16 @@ class Package extends Controller
         } else {
             echo "Something went wrong";
         }
-        return view('test', $data);
+        return redirect()->redirect("/package");
+    }
+
+    public function list(){
+        $model = new PackageModel();    
+		$result = $model->get(); 
+        print_r($result);       
+    }
+
+    public function edit($id){
+        //$package = PackageModel::find($id);
     }
 }
