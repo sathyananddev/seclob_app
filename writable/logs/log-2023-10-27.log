@@ -450,3 +450,15 @@ in APPPATH\Views\test.php on line 2.
  8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\xampp\\htdocs\\seclob_app\\public\\index.php')
+CRITICAL - 2023-10-27 12:16:52 --> Undefined variable $users
+in APPPATH\Views\test.php on line 2.
+ 1 APPPATH\Views\test.php(2): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'D:\\projects\\xampp\\htdocs\\seclob_app\\app\\Views\\test.php', 2)
+ 2 SYSTEMPATH\View\View.php(228): include('D:\\projects\\xampp\\htdocs\\seclob_app\\app\\Views\\test.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('test', [], true)
+ 5 APPPATH\Controllers\Member.php(22): view('test', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Member->save()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Member))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\xampp\\htdocs\\seclob_app\\public\\index.php')
