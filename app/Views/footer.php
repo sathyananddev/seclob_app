@@ -30,5 +30,6 @@ $(function () {
   bsCustomFileInput.init();
 });
 </script>
+<script src="../../plugins/toastr/toastr.min.js"></script>
 </body>
 </html>

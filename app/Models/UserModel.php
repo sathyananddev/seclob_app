@@ -18,7 +18,13 @@ class UserModel extends Model
 
     public function user($data)
     {
-        return $this->getWhere(['email' => $data['email'],'password' => $data['id']]);
 
+        //$result = $this->getWhere($data);
+        $db = \Config\Database::connect();
+        $builder = $db->table('user'); // 'user' is the name of your table
+        $builder->select('*'); // names of your columns, single string, separated by a comma
+        $builder->where('email', $data['email']); // where clause
+        $query = $builder->get();
+        return $query->getResult();
     }
 }
