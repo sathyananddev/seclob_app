@@ -55,8 +55,12 @@ class Package extends Controller
 
     public function list(){
         $model = new PackageModel();    
-		$result = $model->get(); 
-        print_r($result);       
+		$result = $model->get();
+        $data['packages'] = $result;
+        return view('list_header') 
+        .  view('menu') 
+        . view('packages_list', $data)
+        . view('list_footer');       
     }
 
     public function edit($id){

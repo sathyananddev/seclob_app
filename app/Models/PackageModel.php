@@ -26,7 +26,9 @@ class PackageModel extends Model
     public function get($id = false)
     {
         if ($id === false) {
-            return $this->findAll();
+            $query = $this->db->query('SELECT * FROM package_tbl');
+            $results = $query->getResultArray();
+            return $results;
         } else {
             return $this->getWhere(['id' => $id]);
         }
