@@ -414,3 +414,15 @@ in SYSTEMPATH\Database\BaseConnection.php on line 647.
  6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
  8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\xampp\\htdocs\\seclob_app\\public\\index.php')
+CRITICAL - 2023-10-27 11:59:26 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(635): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(230): CodeIgniter\Model->builder()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PackageModel.php(29): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Package.php(58): App\Models\PackageModel->get()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Package->list()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Package))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\projects\\xampp\\htdocs\\seclob_app\\public\\index.php')
