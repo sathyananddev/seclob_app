@@ -6,6 +6,9 @@ use CodeIgniter\Model;
 
 class PackageModel extends Model
 {
+    protected $table = 'package_tbl';
+    //protected $primaryKey = 'product_id';
+    //protected $allowedFields = ['product_name','product_price'];
     function add_plan($data)
     {
         $data = array(
@@ -27,7 +30,7 @@ class PackageModel extends Model
     {
         if ($id === false) {
             $query = $this->db->query('SELECT * FROM package_tbl');
-            $results = $query->getResultArray();
+            $results = $query->getResultArray();            
             return $results;
         } else {
             return $this->getWhere(['id' => $id]);

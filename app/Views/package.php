@@ -84,7 +84,7 @@
       //$('#amountGst').addClass
       var amount = $('#amount').val();
       var gst = amount / 1.18;
-      var gst_deducted = Math.round(gst * 100) / 100
+      var gst_deducted = Math.round(gst * 100) / 100;
       $('input[name="amountGst"]').val(gst_deducted);
 
     });
