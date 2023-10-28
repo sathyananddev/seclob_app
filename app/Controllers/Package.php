@@ -21,6 +21,14 @@ class Package extends Controller
             . view('footer');
     }
 
+    public function add()
+    {
+        return view('header')
+            . view('menu')
+            . view('package')
+            . view('footer');
+    }
+
     public function test()
     {
         return view('header');
@@ -32,7 +40,7 @@ class Package extends Controller
         $data = $_POST;
         $planName = $this->request->getPost('planName');
         $amount = $this->request->getPost('amount');
-        $amountGst = $this->request->getPost('amountGst');        
+        $amountGst = $this->request->getPost('amountGst');
         $users = $this->request->getPost('users');
         $addOnUsers = $this->request->getPost('addOnUsers');
 
@@ -40,8 +48,8 @@ class Package extends Controller
             'package_name' => $planName,
             'package_amount' => $amount,
             'package_gst_excluded' => $amountGst,
-            'users'=>$users,
-            'add_on_users'=>$addOnUsers
+            'users' => $users,
+            'add_on_users' => $addOnUsers
         ];
 
         $result = $model->add($data);
@@ -53,17 +61,23 @@ class Package extends Controller
         return redirect()->redirect("/package");
     }
 
-    public function list(){
-        $model = new PackageModel();    
-		$result = $model->get();
-        $data['packages'] = $result;
-        return view('list_header') 
-        .  view('menu') 
-        . view('packages_list', $data)
-        . view('list_footer');       
+    public function list()
+    {
+        $model = new PackageModel();
+        $result = $model->get();
+        if ($result) {
+            $data['packages'] = $result;
+        } else {
+            $data['packages'] = [];
+        }
+        return view('list_header')
+            . view('menu')
+            . view('packages_list', $data)
+            . view('list_footer');
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         //$package = PackageModel::find($id);
     }
 }

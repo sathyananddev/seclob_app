@@ -34,10 +34,12 @@ class Login extends BaseController
             $req = array('email'=>$_POST['email'],'password'=>md5($_POST['password']));
         }        
 		$result = $model->user($req);
-        if(count($result) > 0){
+        $tmp = (array) $result;
+        if(count($tmp) > 0){
             session_start();
-            $user = $result[0];
+            $user = $result;
             $_SESSION['email'] = $user->email;
+            $_SESSION['userId'] = $user->id;
             $_SESSION['isLoggedIn'] = true;
             return redirect()->redirect("/package");
         }else{

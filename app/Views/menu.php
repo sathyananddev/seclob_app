@@ -39,15 +39,15 @@
         <form method="post" accept-charset="utf-8">
           <?= csrf_field() ?>
           <li class="nav-item">
-            <a href="<?php echo base_url('package'); ?>" class="nav-link">
+            <a href="<?php echo base_url('packages'); ?>" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Package</p>
+              <p>Packages</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?php echo route_to('member') ?>" class="nav-link">
+            <a href="<?php echo route_to('members') ?>" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Member</p>
+              <p>Members</p>
             </a>
           </li>
         </form>

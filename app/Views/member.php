@@ -63,13 +63,13 @@
                 </div>
                 <div class="form-group">
                   <label for="package">Choose the Package</label>
-                  <select class="custom-select rounded-0" id="package">
+                  <select class="custom-select rounded-0" id="package" name="packages">
                     <option>Value 1</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label for="addOn">Choose Add-on Package</label>
-                  <select class="custom-select rounded-0" id="addOn">
+                  <select class="custom-select rounded-0" id="addOn" name="addOn">
                     <option>Value 1</option>
                   </select>
                 </div>

@@ -25,7 +25,10 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Users</h3>
+                            <h3 class="card-title">Members</h3>
+                            <a class="btn btn-app" href="<?php echo route_to('package/add') ?>">
+                                <i class="fas fa-plus"></i>
+                            </a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -35,34 +38,44 @@
                                         <th>Name</th>
                                         <th>Amount</th>
                                         <th>GST Amount</th>
-                                        <th>Address</th>
-                                        <th>Package</th>
+                                        <th>Users</th>
+                                        <th>Add-on Users</th>
                                         <th>Status</th>
-                                        <th>Add-On Package</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($packages as $item) { ?>
+                                    <?php
+                                    foreach ($packages as $item) { ?>
                                         <tr>
-                                            <td><?php $item['package_name']; ?></td>
-                                            <td>+91839849990</td>
-                                            <td>user@test.com</td>
-                                            <td>test</td>
-                                            <td>pack1</td>
-                                            <td>Active</td>
-                                            <td>pack2</td>
+                                            <td>
+                                                <?php echo $item['package_name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $item['package_amount']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $item['package_gst_excluded']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $item['users']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $item['add_on_users']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $item['status'] === 1 ? 'Active' : 'Inactive'; ?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Address</th>
-                                        <th>Package</th>
+                                        <th>Amount</th>
+                                        <th>GST Amount</th>
+                                        <th>Users</th>
+                                        <th>Add-on Users</th>
                                         <th>Status</th>
-                                        <th>Add-On Package</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -93,6 +106,12 @@
             "info": true,
             "autoWidth": false,
             "responsive": true,
+            // 'ajax': {
+            //     'url': 'api/packages/list'
+            // },
+            // 'columns': [
+            //     { data: 'package_name' }
+            // ]
         });
     });
 </script>
